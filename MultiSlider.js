@@ -14,6 +14,7 @@ import {
 import DefaultMarker from './DefaultMarker';
 import DefaultLabel from './DefaultLabel';
 import { createArray, valueToPosition, positionToValue } from './converters';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class MultiSlider extends React.Component {
   static defaultProps = {
@@ -548,13 +549,16 @@ export default class MultiSlider extends React.Component {
     const body = (
       <React.Fragment>
         <View style={[styles.fullTrack, { width: sliderLength }]}>
-          <View
+          <LinearGradient
             style={[
               styles.track,
               this.props.trackStyle,
               trackOneStyle,
               { width: trackOneLength },
             ]}
+            colors={['#683FE9', '#9773F6', '#FF835C', '#FF5A28']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
           />
           <View
             style={[
