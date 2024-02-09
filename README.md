@@ -22,7 +22,8 @@ react-native run-android
 ### Installation
 
 ```bash
-$ npm install --save @kdn0325/react-native-gradient-multi-slider
+$ npm install --save react-native-gradient-multi-slider
+$ yarn add -D react-native-gradient-multi-slider
 ```
 
 ### Usage in a ScrollView

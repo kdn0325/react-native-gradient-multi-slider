@@ -1,5 +1,5 @@
 {
-  "name": "@kdn0325/react-native-gradient-multi-slider",
+  "name": "react-native-gradient-multi-slider",
   "version": "1.0.0",
   "description": "Android and iOS supported pure JS slider component with multiple markers for React Native",
   "main": "MultiSlider.js",
