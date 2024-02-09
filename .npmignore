@@ -1,4 +1,5 @@
 docs/
 examples/
 .idea/
+*.lock
 node_modules/

@@ -1,6 +1,6 @@
 {
-  "name": "@kdn0325/react-native-multi-slider",
-  "version": "2.2.2",
+  "name": "@kdn0325/react-native-gradient-multi-slider",
+  "version": "1.0.0",
   "description": "Android and iOS supported pure JS slider component with multiple markers for React Native",
   "main": "MultiSlider.js",
   "types": "index.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ptomasroos/react-native-multi-slider.git"
+    "url": "git+https://github.com/kdn0325/react-native-gradient-multi-slider.git"
   },
   "keywords": [
     "react-native-multi-slider",
@@ -47,10 +47,14 @@
     "prettier": "^1.14.3"
   },
   "bugs": {
-    "url": "https://github.com/ptomasroos/react-native-multi-slider/issues"
+    "url": "https://github.com/kdn0325/react-native-gradient-multi-slider/issues"
   },
-  "homepage": "https://github.com/ptomasroos/react-native-multi-slider#readme",
+  "homepage": "https://github.com/kdn0325/react-native-gradient-multi-slider#readme",
   "dependencies": {
     "react-native-linear-gradient": "^2.8.3"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
   }
 }
