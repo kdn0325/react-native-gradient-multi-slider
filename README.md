@@ -11,9 +11,7 @@ npm install
 react-native run-ios
 react-native run-android
 ```
-
-![Example](https://raw.githubusercontent.com/kdn0325/react-native-gradient-multi-slider/master/docs/demo.gif)
-
+![Example](https://github.com/kdn0325/react-native-gradient-multi-slider/assets/91298955/ac39fff7-8ece-4488-a383-77da06a66f77)
 
 ## Getting Started
 
