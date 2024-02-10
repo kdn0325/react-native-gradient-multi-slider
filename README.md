@@ -27,7 +27,7 @@ $ yarn add -D react-native-gradient-multi-slider
 ### Usage in a ScrollView
 
 ```js
-import MultiSlider from '@kdn0325/react-native-gradient-multi-slider';
+import MultiSlider from 'react-native-gradient-multi-slider';
 
 <MultiSlider
     sliderLength={250}
