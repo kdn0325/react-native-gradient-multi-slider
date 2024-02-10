@@ -5,7 +5,8 @@
   "main": "MultiSlider.js",
   "types": "index.d.ts",
   "scripts": {
-    "prettier": "prettier --write \"**/*.js\""
+    "prettier": "prettier --write \"**/*.js\"",
+    "postinstall": "node script/postinstall.js"
   },
   "repository": {
     "type": "git",
