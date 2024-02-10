@@ -14,7 +14,7 @@ import {
 import DefaultMarker from './DefaultMarker';
 import DefaultLabel from './DefaultLabel';
 import { createArray, valueToPosition, positionToValue } from './converters';
-import LinearGradient from 'react-native-linear-gradient';
+import LinearGradient from './index';
 
 export default class MultiSlider extends React.Component {
   static defaultProps = {
