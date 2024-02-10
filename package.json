@@ -1,6 +1,6 @@
 {
   "name": "react-native-gradient-multi-slider",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Android and iOS supported pure JS slider component with multiple markers for React Native",
   "main": "MultiSlider.js",
   "types": "index.d.ts",
@@ -10,17 +10,18 @@
     "src",
     "common.js",
     "index.android.js",
+    "RNLinearGradient.podspec",
     "index.ios.js",
     "index.js",
     "converters.js",
     "DefaultLabel.js",
     "DefaultMarker.js",
     "index.d.ts",
-    "MultiSlider.js",
-    "BVLinearGradient.podspec"
+    "MultiSlider.js"
   ],
   "scripts": {
-    "prettier": "prettier --write \"**/*.js\""
+    "prettier": "prettier --write \"**/*.js\"",
+    "flow": "flow check"
   },
   "repository": {
     "type": "git",
