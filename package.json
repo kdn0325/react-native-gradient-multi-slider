@@ -52,20 +52,19 @@
     "react": "*",
     "react-native": "*",
     "@types/react-native": "^0.70.14",
-    "flow-bin": "^0.182.0",
+    "flow-bin": "^0.182.0"
   },
   "devDependencies": {
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "@types/react-native": "^0.70.14",
+    "flow-bin": "^0.182.0"
   },
   "bugs": {
     "url": "https://github.com/kdn0325/react-native-gradient-multi-slider/issues"
   },
   "homepage": "https://github.com/kdn0325/react-native-gradient-multi-slider#readme",
-  "dependencies": {
-    "react-native-linear-gradient": "^2.8.3"
-  },
   "directories": {
     "doc": "docs",
     "example": "examples"
