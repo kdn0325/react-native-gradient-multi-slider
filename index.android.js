@@ -1,19 +1,22 @@
+/**
+ * @providesModule LinearGradient
+ * @flow
+ */
 import React, { Component, createRef } from 'react';
 import { processColor, StyleSheet, View } from 'react-native';
 
-import NativeLinearGradient from './src';
+import NativeLinearGradient, { type Props } from './common';
 
 const convertPoint = (name, point) => {
   if (Array.isArray(point)) {
     console.warn(
       `LinearGradient '${name}' property should be an object with fields 'x' and 'y', ` +
-        'Array type is deprecated.',
+      'Array type is deprecated.'
     );
-
-    return {
-      x: point[0],
-      y: point[1],
-    };
+  }
+  // TODO: Update Android native code to receive a {x, y} object, not an array
+  if (point !== null && typeof point === 'object') {
+    return [point.x, point.y];
   }
   return point;
 };
@@ -23,22 +26,20 @@ const convertPoint = (name, point) => {
  *
  * @param {number} defaultValue
  */
-const validNumber = defaultValue => value => {
+const validNumber = (defaultValue) => (value) => {
   return typeof value === 'number' ? value : defaultValue;
 };
 
-export default class LinearGradient extends Component {
-  constructor(props) {
-    super(props);
-    this.gradientRef = React.createRef();
-  }
+export default class LinearGradient extends Component<Props> {
+  props: Props;
+  gradientRef = createRef<NativeLinearGradient>();
 
   static defaultProps = {
     start: { x: 0.5, y: 0.0 },
     end: { x: 0.5, y: 1.0 },
   };
 
-  setNativeProps(props) {
+  setNativeProps(props: Props) {
     this.gradientRef.current.setNativeProps(props);
   }
 
@@ -56,10 +57,8 @@ export default class LinearGradient extends Component {
       ...otherProps
     } = this.props;
 
-    if (colors && locations && colors.length !== locations.length) {
-      console.warn(
-        'LinearGradient colors and locations props should be arrays of the same length',
-      );
+    if ((colors && locations) && (colors.length !== locations.length)) {
+      console.warn('LinearGradient colors and locations props should be arrays of the same length');
     }
 
     // inherit container borderRadius until this issue is resolved:
@@ -78,13 +77,13 @@ export default class LinearGradient extends Component {
       validRadius(flatStyle.borderBottomRightRadius),
       validRadius(flatStyle.borderBottomRightRadius),
       validRadius(flatStyle.borderBottomLeftRadius),
-      validRadius(flatStyle.borderBottomLeftRadius),
+      validRadius(flatStyle.borderBottomLeftRadius)
     ];
 
     return (
       <View ref={this.gradientRef} {...otherProps} style={style}>
         <NativeLinearGradient
-          style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0 }}
+          style={{position: 'absolute', top: 0, left: 0, bottom: 0, right: 0}}
           colors={colors.map(processColor)}
           startPoint={convertPoint('start', start)}
           endPoint={convertPoint('end', end)}

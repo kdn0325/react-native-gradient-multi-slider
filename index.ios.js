@@ -1,35 +1,37 @@
+/**
+ * @providesModule LinearGradient
+ * @flow
+ */
 import React, { Component, createRef } from 'react';
 import { processColor } from 'react-native';
 
-import NativeLinearGradient from './src';
+import NativeLinearGradient, { type Props } from './common';
 
 const convertPoint = (name, point) => {
   if (Array.isArray(point)) {
     console.warn(
       `LinearGradient '${name}' property should be an object with fields 'x' and 'y', ` +
-        'Array type is deprecated.',
+      'Array type is deprecated.'
     );
 
     return {
       x: point[0],
-      y: point[1],
+      y: point[1]
     };
   }
   return point;
 };
 
-export default class LinearGradient extends Component {
-  constructor(props) {
-    super(props);
-    this.gradientRef = createRef();
-  }
+export default class LinearGradient extends Component<Props> {
+  props: Props;
+  gradientRef = createRef<NativeLinearGradient>();
 
   static defaultProps = {
     start: { x: 0.5, y: 0.0 },
     end: { x: 0.5, y: 1.0 },
   };
 
-  setNativeProps(props) {
+  setNativeProps(props: Props) {
     this.gradientRef.current.setNativeProps(props);
   }
 
@@ -44,10 +46,8 @@ export default class LinearGradient extends Component {
       angle,
       ...otherProps
     } = this.props;
-    if (colors && locations && colors.length !== locations.length) {
-      console.warn(
-        'LinearGradient colors and locations props should be arrays of the same length',
-      );
+    if ((colors && locations) && (colors.length !== locations.length)) {
+      console.warn('LinearGradient colors and locations props should be arrays of the same length');
     }
 
     return (
