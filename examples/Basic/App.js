@@ -97,6 +97,7 @@ export default function App() {
         unselectedStyle={{
           backgroundColor: 'silver',
         }}
+        gradientColors={['#00f', '#0f0', '#f00']}
         values={[5]}
         containerStyle={{
           height: 40,
