@@ -11,6 +11,7 @@
     "common.js",
     "index.android.js",
     "index.ios.js",
+    "index.js",
     "converters.js",
     "DefaultLabel.js",
     "DefaultMarker.js",
