@@ -93,8 +93,4 @@ export interface MultiSliderProps {
   vertical?: boolean;
 }
 
-export interface LinearGradientComponent
-  extends React.Component<LinearGradientProps> {}
-
-export interface MultiSliderComponent
-  extends React.Component<MultiSliderProps> {}
+export default class MultiSlider extends React.Component<MultiSliderProps> {}
