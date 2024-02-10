@@ -62,44 +62,43 @@ In order to make different styles on markers you can set isMarkersSeparated to t
 Feel free to contribute to this part of the documentation.
 
 
-|                                                  Prop name                                                  | Default value |       Type        | Purpouse |
-|:--------:|:----:|:----:|:-----------:|
-| values                                                    | [0] | array of numbers  | Prefixed values of the slider. |
-| gradientColors                                                | ['#0000FF', '#ADD8E6'] |  array of string  | Defines the gradient colors for the slider track. |
-| onValuesChangeStart                                             | () => {} |     function      | Callback when the value starts changing |
-| onValuesChange                                                | () => {} |     function      | Callback when the value changes |
-| onValuesChangeFinish                                             | (values) => {} |     function      | Callback when the value stops changing |
-| sliderLength                                                 | 280 |      number       | Length of the slider (?) |
-| touchDimensions                                               | {height: 50,width: 50,borderRadius: 15,slipDisplacement: 200} |      object       | (?) |
-| enableLabel                                                 |  |     function      | Enable the label rendering |
-| customLabel                                                 |  |     function      | Component used for rendering a label above the cursors. |
-| customMarker                                                 |  |     function      | Component used for the cursor. |
-| customMarkerLeft                                               |  |     function      | Component used for the left cursor. |
-| customMarkerRight                                              |  |     function      | Component used for the right cursor. |
-| isMarkersSeparated                                              |  |      boolean      | See explaination above in the README.md |
-| min                                                     | 0 |      number       | Minimum value available in the slider. |
-| max                                                     | 10 |      number       | Maximum value available in the slider. |
-| step                                                     | 1 |      number       | Step value of the slider. |
-| optionsArray                                                 |  | array of numbers  | Possible values of the slider. Ignores min and max. |
-| {container/track/selected/unselected/ markerContainer/marker/pressedMarker/step/stepLabel/StepMarker} Style |  |   style object    | Styles for the slider |
-| valuePrefix                                                 |  |      string       | Prefix added to the value. |
-| valueSuffix                                                 |  |      string       | Suffix added to the value. |
-| enabledOne                                                  | true |      boolean      | Enables the first cursor |
-| enabledTwo                                                  | true |      boolean      | Enables the second cursor |
-| stepsAs                                                   | [] | array of objects  | Use stepsAs when you want to customize the steps-labels. stepsAs expects an array of objects [{index: number, stepLabel: string, prefix: string, suffix: string}]. Where index is for which step you want to customize, and all the other steps will show its index as its stepLabel. Both showSteps and showStepsLabels has to be enabled for stepsAs to be used.   |
-| showSteps                                                  | false |      boolean      | Show steps |
-| showStepMarkers                                               | true |      boolean      | Show steps-markers on the track, showSteps has to be enabled as well |
-| showStepLabels                                                | true |      boolean      | Show steps-labels underneath the track, showSteps has to be enabled as well |
-| onToggleOne                                                 | undefined | function callback | Listener when first cursor toggles. |
-| onToggleTwo                                                 | undefined | function callback | Listener when second cursor toggles. |
-| allowOverlap                                                 | false |      boolean      | Allow the overlap within the cursors. |
-| snapped                                                   | false |      boolean      | Use this when you want a fixed position for your markers, this will split the slider in N specific positions |
-| smoothSnapped                                                | false |      boolean      | Same as snapped but you can move the slider as usual. When released it will go to the nearest marker |
-| vertical                                                   | false |      boolean      | Use vertical orientation instead of horizontal. |
-| markerOffsetX                                                | 0 |      number       | Offset the cursor(s) on the X axis |
-| markerOffsetY                                                | 0 |      number       | Offset the cursor(s) on the Y axis |
-| markerSize                                                  | 0 |      number       | It determines the marker margin from the edges of the track, useful to avoid the markers to overflow out of the track. |
-| minMarkerOverlapDistance                                           | 0 |      number       | if this is > 0 and allowOverlap is false, this value will determine the closest two markers can come to each other (in pixels, not steps). This can be used for cases where you have two markers large cursors and you don't want them to overlap. Note that markers will still overlap at the start if starting values are too near. CANNOT be combined with minMarkerOverlapDistance |
-| minMarkerOverlapStepDistance                                         | 0 |      number       | if this is > 0 and allowOverlap is false, this value will determine the closest two markers can come to each other (in steps, not pixels). This can be used for cases where you have two markers large cursors and you don't want them to overlap. Note that markers will still overlap at the start if starting values are too near. CANNOT be combined with minMarkerOverlapStepDistance |
-| imageBackgroundSource                                            | undefined |      string       | Specifies the source as required by [ImageBackground](https://facebook.github.io/react-native/docs/imagebackground)|
-| testID                                                    |  |      string       | Used to locate this view in end-to-end tests. |
+| Prop Name            | Default | Type    | Purpose                                  |
+|----------------------|---------|---------|------------------------------------------|
+| values               | [0]     | Array   | Prefixed values of the slider            |
+| gradientColors       | #...    | Array   | Gradient colors for slider track         |
+| onValuesChangeStart  | () => {}| Function| Callback when value starts changing      |
+| onValuesChange       | () => {}| Function| Callback when value changes              |
+| onValuesChangeFinish| () => {}| Function| Callback when value stops changing       |
+| sliderLength         | 280     | Number  | Length of the slider                     |
+| touchDimensions      | {...}   | Object  | Touch dimensions configuration           |
+| enableLabel          |         | Function| Enable label rendering                   |
+| customLabel          |         | Function| Component for rendering label above      |
+| customMarker         |         | Function| Component for cursor                     |
+| customMarkerLeft     |         | Function| Component for left cursor                |
+| customMarkerRight    |         | Function| Component for right cursor               |
+| isMarkersSeparated   |         | Boolean | Explanation in README.md                |
+| min                  | 0       | Number  | Minimum value available in slider        |
+| max                  | 10      | Number  | Maximum value available in slider        |
+| step                 | 1       | Number  | Step value of slider                     |
+| optionsArray         |         | Array   | Possible values of slider                |
+| Styles               | {...}   | Style   | Slider styles                            |
+| valuePrefix          |         | String  | Prefix added to value                    |
+| valueSuffix          |         | String  | Suffix added to value                    |
+| enabledOne           | true    | Boolean | Enables first cursor                     |
+| enabledTwo           | true    | Boolean | Enables second cursor                    |
+| stepsAs              | []      | Array   | Customize step labels                    |
+| showSteps            | false   | Boolean | Show steps                               |
+| showStepMarkers      | true    | Boolean | Show step markers on track               |
+| showStepLabels       | true    | Boolean | Show step labels underneath track        |
+| onToggleOne          |         | Function| Listener when first cursor toggles       |
+| onToggleTwo          |         | Function| Listener when second cursor toggles      |
+| allowOverlap         | false   | Boolean | Allow overlap within cursors             |
+| snapped              | false   | Boolean | Fixed position for markers               |
+| smoothSnapped        | false   | Boolean | Snap to nearest marker on release        |
+| vertical             | false   | Boolean | Use vertical orientation                 |
+| markerOffsetX        | 0       | Number  | Offset cursor(s) on X axis               |
+| markerOffsetY        | 0       | Number  | Offset cursor(s) on Y axis               |
+| markerSize           | 0       | Number  | Marker margin from track edges           |
+| minMarkerOverlap...  | 0       | Number  | Closest distance between markers (pixels)|
+| imageBackground...   |         | String  | ImageBackground source                   |
+| testID               |         | String  | Used in end-to-end tests
