@@ -23,7 +23,6 @@ export default class MultiSlider extends React.Component {
     onValuesChange: values => {},
     onValuesChangeFinish: values => {},
     onMarkersPosition: values => {},
-    gradientColors: ['#683FE9', '#9773F6', '#FF835C', '#FF5A28'],
     step: 1,
     min: 0,
     max: 10,
@@ -557,7 +556,7 @@ export default class MultiSlider extends React.Component {
               trackOneStyle,
               { width: trackOneLength },
             ]}
-            colors={this.props.gradientColors}
+            colors={this.props.gradientColors || ['#0000FF', '#ADD8E6']}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
           />
