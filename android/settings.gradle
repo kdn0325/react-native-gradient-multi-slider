@@ -1,3 +1,0 @@
-if (settings.hasProperty("newArchEnabled") && settings.newArchEnabled == "true") {
-    includeBuild('../node_modules/react-native-gradle-plugin')
-}
