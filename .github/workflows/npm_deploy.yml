@@ -1,9 +1,8 @@
 name: Deployment
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [closed]
 
 jobs:
   deploy:
@@ -17,4 +16,6 @@ jobs:
           node-version: 14.x
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm run deploy
+      - name: Deploy on release branch
+        if: github.ref == 'refs/heads/release'
+        run: npm run deploy
