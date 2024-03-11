@@ -1,11 +1,12 @@
 {
   "name": "react-native-gradient-multi-slider",
   "version": "1.0.18",
-  "description": "Android and iOS supported pure JS slider component with multiple markers for React Native",
+  "description": "React Native Library for Gradient Sliders in AOS/IOS",
   "main": "MultiSlider.js",
   "types": "index.d.ts",
   "scripts": {
-    "prettier": "prettier --write \"**/*.js\""
+    "prettier": "prettier --write \"**/*.js\"",
+    "prepare": "bob build"
   },
   "repository": {
     "type": "git",
@@ -44,7 +45,8 @@
   "devDependencies": {
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "react-native-builder-bob": "^0.23.2"
   },
   "bugs": {
     "url": "https://github.com/kdn0325/react-native-gradient-multi-slider/issues"
@@ -56,5 +58,27 @@
   "directories": {
     "doc": "docs",
     "example": "examples"
-  }
+  },
+  "react-native": "src/index.js",
+  "source": "src/index.js",
+  "module": "lib/module/index.js",
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }
