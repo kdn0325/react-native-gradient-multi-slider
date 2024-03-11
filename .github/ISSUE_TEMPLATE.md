@@ -7,8 +7,8 @@
   This will greatly improve the chance for you to get the bug fixed and me to be able to find it.
 -->
 
-- [ ] I have searched [existing issues](https://github.com/ptomasroos/react-native-multi-slider/issues)
-- [ ] I am using the [latest multi slider version](https://www.npmjs.com/package/@ptomasroos/react-native-multi-slider)
+- [ ] I have searched [existing issues](https://github.com/kdn0325/react-native-gradient-multi-slider/issues)
+- [ ] I am using the [latest multi slider version](https://www.npmjs.com/package/kdn0325/react-native-gradient-multi-slider)
 
 <!--
   Describe your issue in detail.
